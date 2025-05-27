@@ -70,13 +70,8 @@ async function getRecipes() {
   //            If there are recipes, return them.
   const count = localStorage.length;
   if (count > 0) {
-    let recipes = new Array(count);
-    for (let i = 0; i < count; i++) {
-      let key = localStorage.key(i);
-      recipes[localStorage.getItem(key)];
-    }
-    console.log(count);
-    return recipes;
+    let recipes = localStorage.getItem('recipes');
+    return JSON.parse(recipes);
   }
   /**************************/
   // The rest of this method will be concerned with requesting the recipes
